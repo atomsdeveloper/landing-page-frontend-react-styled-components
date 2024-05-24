@@ -5,6 +5,20 @@ import GlobalStyles from '../src/styles/globals-styles';
 /** @type { import('@storybook/react').Preview } */
 const preview = {
  parameters: {
+  actions: {ArgTypesRegex: "^on[A_Z.*" },
+  backgrounds: {
+    default: 'light',
+    values: [
+        {
+            name: 'light',
+            value: theme.colors.bgColorLight
+        },
+        {
+            name: 'dark',
+            value: theme.colors.bgColorDark
+        }
+    ]
+  },
   controls: {
    matchers: {
     color: /(background|color)$/i,

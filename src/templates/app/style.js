@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div`
-    ${({theme}) => css`
-        background: ${theme.colors.primaryColor}
-    `}
+const Wrapper = styled.div`
 `;
+export default Wrapper;

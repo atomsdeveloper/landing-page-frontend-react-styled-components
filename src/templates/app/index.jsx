@@ -1,4 +1,4 @@
-import { Heading } from '@storybook/blocks';
+import Heading from '../../components/Heading/Heading';
 import * as Styled from './style';
 
 function Home() {

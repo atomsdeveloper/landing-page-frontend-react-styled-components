@@ -1,15 +1,12 @@
 import P from 'prop-types';
-import Styled from './styles';
+import Title from './styles';
 
 const Heading = ( {children} ) => {
     return (
-        <Styled.Title>
-            {children}
-        </Styled.Title>
+        <Title> {children} </Title>
     )
 }
-export default Heading;
-
 Heading.propTypes = {
     children: P.node.isRequired
 }
+export default Heading;

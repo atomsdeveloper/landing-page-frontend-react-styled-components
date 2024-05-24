@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 
-export const Title = styled.h1`
-    ${({theme}) => css`
-        background: ${theme.colors.primaryColor}
+const Title = styled.h1`
+    ${({theme, light}) => css`
+        color: ${light ? theme.colors.textColorDark : theme.colors.textColorLight};
     `}
 `;
+export default Title;

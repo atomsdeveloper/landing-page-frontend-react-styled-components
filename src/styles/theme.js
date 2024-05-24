@@ -1,7 +1,10 @@
 const theme = {
     colors: {
-        primaryColor: 'blue',
-        secondaryColor: 'red'
+        bgColorDark: '#0F2B46',
+        bgColorLight: '#ffff',
+
+        textColorDark: "#0F2B46",
+        textColorLight: "#FFFFFF",
     },
     fonts: {
         
