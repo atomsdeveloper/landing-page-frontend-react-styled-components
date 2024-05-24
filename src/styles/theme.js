@@ -1,4 +1,4 @@
-export const theme = {
+const theme = {
     colors: {
         primaryColor: 'blue',
         secondaryColor: 'red'
@@ -7,6 +7,7 @@ export const theme = {
         
     },
     spacings: {
-        
+
     }
 }
+export default theme;

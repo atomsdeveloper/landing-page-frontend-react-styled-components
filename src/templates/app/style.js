@@ -2,6 +2,6 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
     ${({theme}) => css`
-        backgrond: ${theme.colors.secondaryColor}
+        background: ${theme.colors.primaryColor}
     `}
 `;
