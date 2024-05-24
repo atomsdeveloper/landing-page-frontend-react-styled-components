@@ -4,11 +4,14 @@ const theme = {
         bgColorLight: '#ffff',
 
         textColorDark: "#0F2B46",
-        textColorLight: "#FFFFFF",
+        textColorLight: "#ffff",
     },
-    fonts: {
-        
+    fontSize: {
+        default: "1.6rem"
     },
+    fontFamily: {
+        default:  "Roboto, sans-serif",
+    }, 
     spacings: {
 
     }
