@@ -1,9 +1,10 @@
+import { Heading } from '@storybook/blocks';
 import * as Styled from './style';
 
 function Home() {
   return (
     <Styled.Wrapper>
-      <h1>Hello</h1>
+      <Heading> Testando o Texto </Heading>
     </Styled.Wrapper>
   );
 }
