@@ -8,9 +8,9 @@ const Heading = ( {children, light = false, as='h1', size='big', upperCase=false
 };
 Heading.propTypes = {
     children: P.node.isRequired,
-    light: P.bool.isRequired,
+    light: P.bool,
     as: P.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
     size: P.oneOf(['default', 'small', 'medium', 'big']),
-    upperCase: P.bool.isRequired
+    upperCase: P.bool
 }
 export default Heading;
