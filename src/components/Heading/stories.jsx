@@ -1,16 +1,14 @@
-// Passando as configurações do componente para o Storybook
+// Passando as configurações do componente Heading para o Storybook
 import Heading from './Heading';
 
 export default {
     title: 'Heading',
     component: Heading,
     args: {
-        children: 'Texto está claro',
-        light: false
+        children: 'Fundo está escuro',
     },
     argTypes: {
         children: {type: 'string'},
-        light: {type: 'boolean'}
     },
     parameters: {
         backgrounds: {
@@ -20,19 +18,17 @@ export default {
 }
 export const Dark = (args) => {
     return <Heading {...args} light={false} />; 
-}
-
+};
 
 export const Light = (args) => {
     return <Heading {...args} light={true} />; 
-}
+};
 Light.parameters = {
     backgrounds: {
         default: 'light',
     },
 };
-
 Light.args = {
-    children: 'Texto está escuro',
+    children: 'Fundo está claro',
     light: true
 };
