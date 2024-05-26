@@ -27,7 +27,7 @@ describe('<Heading />', () => {
         });
     });
 
-    it('should render with size Small values', () => {
+    it('should render with size Default values', () => {
         render(<ThemeProvider theme={theme}> <Heading size='default'>Texto</Heading> </ThemeProvider>);
         const heading = screen.getByRole('heading', {name: 'Texto'});
 
@@ -45,7 +45,7 @@ describe('<Heading />', () => {
         });
     });
 
-    it('should render with size Small values', () => {
+    it('should render with size Medium values', () => {
         render(<ThemeProvider theme={theme}> <Heading size='medium'>Texto</Heading> </ThemeProvider>);
         const heading = screen.getByRole('heading', {name: 'Texto'});
 
@@ -63,9 +63,9 @@ describe('<Heading />', () => {
         });
     });
 
-    it('should render with uppercase values', () => {
+    it('should render with other Tags values', () => {
         const { container } = render(<ThemeProvider theme={theme}> <Heading as='h6'>Texto</Heading> </ThemeProvider>);
-        const heading = screen.getByRole('heading', {name: 'Texto'});
+        //const heading = screen.getByRole('heading', {name: 'Texto'});
         const h6 = container.querySelector('h6')
 
         expect(h6.tagName.toLocaleLowerCase()).toBe('h6')
