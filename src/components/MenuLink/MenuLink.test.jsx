@@ -1,14 +1,14 @@
 import { screen } from '@testing-library/dom';
 import { render } from '@testing-library/react';
 
-import MenuLink from '.';
 import { ThemeProvider } from 'styled-components';
 import theme from '../../styles/theme';
 
+import {MenuLink} from '.';
 describe('<MenuLink />', () => {
     it('should render a link', () => {
         render(<ThemeProvider theme={theme}>
-                <MenuLink link='https://www.google.com.br/'> Children </MenuLink>
+                <MenuLink link='https://localhost'> Children </MenuLink>
             </ThemeProvider>
         );
         expect(screen.getByRole('link', {name: 'children'}).toBeInTheDocument());

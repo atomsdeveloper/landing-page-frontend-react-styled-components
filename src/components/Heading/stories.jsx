@@ -1,5 +1,5 @@
 // Passando as configurações do componente Heading para o Storybook
-import {Heading} from '.';
+import Heading from '.';
 
 export default {
     title: 'Heading',

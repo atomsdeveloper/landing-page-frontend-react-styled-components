@@ -1,14 +1,14 @@
-import P from 'proto-types';
+import P from 'prop-types';
 import * as Styled from './styles';
-import {MenuLink} from "../MenuLink";
+import { MenuLink } from "../MenuLink";
 
 const NavLinks = ( { links = [] } ) => {
     return (
-       <Styled.Container>
+       <Styled.NavLink>
             {links.map((link) => {
                 <MenuLink key={link.link} {...link} />
             })}
-       </Styled.Container>
+       </Styled.NavLink>
     );
 };
 NavLinks.propTypes = {

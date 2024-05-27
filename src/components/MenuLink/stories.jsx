@@ -1,4 +1,4 @@
-import { MenuLink } from '.';
+import MenuLink from '.';
 
 export default {
     title: 'MenuLink',
@@ -7,13 +7,13 @@ export default {
         children: 'MenuLink',
         link: 'https://www.google.com.br/'
     },
-    argstypes: {
+    argTypes: {
         children: {type: 'string'},
     },
 };
 export const Template = ( args ) => {
     return (
-        <div style={{ display: "flex" }}>
+        <div style={{ display: 'flex' }}>
             <MenuLink {...args} />
         </div>
     );
