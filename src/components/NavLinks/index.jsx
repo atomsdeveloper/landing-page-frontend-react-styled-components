@@ -2,7 +2,7 @@ import P from 'prop-types';
 import * as Styled from './styles';
 import { MenuLink } from "../MenuLink";
 
-const NavLinks = ( { links = [] } ) => {
+export const NavLinks = ( { links = [] } ) => {
     return (
        <Styled.Container>
             {links.map((link) => {

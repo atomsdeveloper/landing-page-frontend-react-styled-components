@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'styled-components';
-import theme from '../src/styles/theme';
-import GlobalStyles from '../src/styles/globals-styles';
+import { theme } from '../src/styles/theme.js';
+import { GlobalStyles } from '../src/styles/globals-styles.js';
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {

@@ -3,7 +3,7 @@ import { screen } from '@testing-library/dom';
 import { theme } from "../../styles/theme"
 import { renderTheme } from '../../styles/render-theme';
 
-import Heading  from '.';
+import { Heading } from '.';
 
 describe('<Heading />', () => {
     it('should render with default values', () => {

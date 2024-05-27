@@ -1,11 +1,11 @@
 import Heading from '../../components/Heading/index';
-import Wrapper from './style';
+import * as Styled from './style';
 
 export const Home = () => {
   return (
-    <Wrapper>
+    <Styled.Wrapper>
       <Heading> O Texto  </Heading>
-    </Wrapper>
+    </Styled.Wrapper>
   );
 }
 

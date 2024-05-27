@@ -1,7 +1,7 @@
-import Text from './styles';
+import * as Styled from './styles';
 
 export const TextContent = () => {
     return (
-        <Text> Texto </Text>
+        <Styled.Text> Texto </Styled.Text>
     );
 };

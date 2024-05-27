@@ -1,8 +1,8 @@
-import MenuLink from '.';
+import { MenuLink } from '.';
 
 export default {
     title: 'MenuLink',
-    component: 'MenuLink',
+    component: MenuLink,
     args: {
         children: 'MenuLink',
         link: 'https://www.google.com.br/'
