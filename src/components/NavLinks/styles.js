@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const Container = styled.nav`
+export const Container = styled.nav`
     ${() => css`
         display: flex;
         flex-flow: row wrap;
@@ -11,4 +11,3 @@ const Container = styled.nav`
         }
   `}
 `;
-export default Container;

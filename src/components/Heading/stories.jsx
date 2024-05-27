@@ -3,7 +3,7 @@ import Heading from '.';
 
 export default {
     title: 'Heading',
-    component: Heading,
+    component: 'Heading',
     args: {
         children: 'Fundo está escuro',
     },

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const Container = styled.a`
+export const Container = styled.a`
     ${({theme}) => css`
         display: block;
         text-decoration: none;
@@ -26,4 +26,3 @@ const Container = styled.a`
     `}
 
 `;
-export default Container;

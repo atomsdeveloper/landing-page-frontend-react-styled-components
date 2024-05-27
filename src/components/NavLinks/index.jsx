@@ -12,12 +12,11 @@ const NavLinks = ( { links = [] } ) => {
     );
 };
 NavLinks.propTypes = {
-    links: P.arrayOf(
-      P.shape({
-        children: P.string.isRequired,
-        link: P.string.isRequired,
-        newTab: P.bool,
-      }),
-    ),
-  };
-export default NavLinks;
+  links: P.arrayOf(
+    P.shape({
+      children: P.string.isRequired,
+      link: P.string.isRequired,
+      newTab: P.bool,
+    }),
+  ),
+};

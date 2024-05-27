@@ -1,7 +1,7 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-const Heading = ( {children, light = false, as='h1', size='big', upperCase=false} ) => {
+export const Heading = ( {children, light = false, as='h1', size='big', upperCase=false} ) => {
     return (
         <Styled.Container light={light} as={as} size={size} upperCase={upperCase}> {children} </Styled.Container>
     )
@@ -13,4 +13,3 @@ Heading.propTypes = {
     size: P.oneOf(['default', 'small', 'medium', 'big']),
     upperCase: P.bool
 }
-export default Heading;
