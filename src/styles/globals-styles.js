@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     }
     body {
         ${({theme}) => css`
-            background: ${theme.fontFamily.default};
+            font-family: ${theme.fontFamily.default};
             font-size: ${theme.fontSize.default};
         `}
     }

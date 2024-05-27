@@ -15,7 +15,7 @@ export const theme = {
         big: "4rem"
     },
     fontFamily: {
-        default:  "Roboto, sans-serif",
+        default:  "'Montserrat', sans-serif",
     }, 
     spacings: {
 
