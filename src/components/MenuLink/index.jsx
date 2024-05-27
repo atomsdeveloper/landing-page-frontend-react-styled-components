@@ -1,12 +1,12 @@
 import P from 'proto-types';
-import * as Styled from './styles';
+import Link from './styles';
 
 const MenuLink = ( {children, link, newTab = false} ) => {
     const target = newTab ? '_blank' : '_self';
     return (
-        <Styled.MenuLink href={link} newTab={target}>
+        <Link href={link} newTab={target}>
             { children }
-        </Styled.MenuLink>
+        </Link>
     );
 };
 MenuLink.propTypes = {

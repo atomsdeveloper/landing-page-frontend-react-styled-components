@@ -1,8 +1,8 @@
-import * as Styled from './styles';
+import Text from './styles';
 
-const Text = () => {
+const TextContent = () => {
     return (
-        <Styled.Text> Text </Styled.Text>
+        <Text> Text </Text>
     );
 };
-export default Text;
+export default TextContent;

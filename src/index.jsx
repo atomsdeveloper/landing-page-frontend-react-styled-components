@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import { GlobalStyles } from './styles/globals-styles';
+import * as GlobalStyles from './styles/globals-styles';
 import { ThemeProvider } from 'styled-components';
 import theme from './styles/theme'
 
@@ -15,5 +15,5 @@ root.render(
 
       <GlobalStyles />
     </ThemeProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
