@@ -12,11 +12,12 @@ export const Container = styled.a`
         &::after {
             content: '';
             position: absolute;
-            bottom: : 0;
-            left: 0;
+            bottom: : 0.76rem;
+            left: 50%;
             width: 0;
             height: 0.2rem;
             background: ${theme.colors.textColorLight};
+            transition: all 300ms ease-in-out;
         }
 
         &:hover::after {
