@@ -2,7 +2,7 @@ import Text from './styles';
 
 const TextContent = () => {
     return (
-        <Text> Text </Text>
+        <Text> Texto </Text>
     );
 };
 export default TextContent;

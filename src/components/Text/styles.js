@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const Text = styled.a`
+const Text = styled.p`
     ${({theme}) => css`
         font-size: ${theme.fontSize.default};
     `}

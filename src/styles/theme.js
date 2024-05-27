@@ -1,4 +1,4 @@
-const theme = {
+export const theme = {
     colors: {
         // Backgrounds Colors
         bgColorDark: '#0F2B46',
@@ -20,5 +20,4 @@ const theme = {
     spacings: {
 
     }
-}
-export default theme;
+};

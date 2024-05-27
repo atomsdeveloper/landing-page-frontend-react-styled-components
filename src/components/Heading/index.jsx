@@ -1,9 +1,9 @@
 import P from 'prop-types';
-import Title from './styles';
+import * as Styled from './styles';
 
 const Heading = ( {children, light = false, as='h1', size='big', upperCase=false} ) => {
     return (
-        <Title light={light} as={as} size={size} upperCase={upperCase}> {children} </Title>
+        <Styled.Container light={light} as={as} size={size} upperCase={upperCase}> {children} </Styled.Container>
     )
 };
 Heading.propTypes = {

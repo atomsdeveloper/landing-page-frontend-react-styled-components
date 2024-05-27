@@ -1,32 +1,21 @@
 import { screen } from '@testing-library/dom';
-import { render } from '@testing-library/react';
 
-import { ThemeProvider } from 'styled-components';
-import theme from '../../styles/theme';
+import { renderTheme } from '../../styles/render-theme';
 
 import {MenuLink} from '.';
 describe('<MenuLink />', () => {
     it('should render a link', () => {
-        render(<ThemeProvider theme={theme}>
-                <MenuLink link='https://localhost'> Children </MenuLink>
-            </ThemeProvider>
-        );
+        renderTheme(<MenuLink link='https://localhost'> Children </MenuLink>);
         expect(screen.getByRole('link', {name: 'children'}).toBeInTheDocument());
     });
 
-    it('should render a link with target self or blank', () => {
-        render(<ThemeProvider theme={theme}>
-                <MenuLink target='_self'> Children </MenuLink>
-            </ThemeProvider>    
-        );
+    it('should renderTheme a link with target self or blank', () => {
+        renderTheme(<MenuLink target='_self'> Children </MenuLink>);
         expect(screen.getByRole('target', {name: '_self' || '_black'}).toBeInTheDocument());
     });
 
-    it('should render a link with name value', () => {
-        render(<ThemeProvider theme={theme}>
-                <MenuLink target='_self'> Children </MenuLink>
-            </ThemeProvider>
-        );
+    it('should renderTheme a link with name value', () => {
+        renderTheme(<MenuLink target='_self'> Children </MenuLink>);
         expect(screen.getByRole('target', {name: '_self' || '_black'}).firstChild.toBeInTheDocument());
     })
 });

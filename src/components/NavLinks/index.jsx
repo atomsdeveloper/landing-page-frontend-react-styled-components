@@ -4,11 +4,11 @@ import { MenuLink } from "../MenuLink";
 
 const NavLinks = ( { links = [] } ) => {
     return (
-       <Styled.NavLink>
+       <Styled.Container>
             {links.map((link) => {
                 <MenuLink key={link.link} {...link} />
             })}
-       </Styled.NavLink>
+       </Styled.Container>
     );
 };
 NavLinks.propTypes = {

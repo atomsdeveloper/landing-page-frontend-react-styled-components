@@ -1,25 +1,24 @@
 import { screen } from '@testing-library/dom';
-import { render } from '@testing-library/react';
 
-import theme from '../../styles/theme';
-import { ThemeProvider } from 'styled-components';
+import { theme } from "../../styles/theme"
+import { renderTheme } from '../../styles/render-theme';
 
 import Heading  from '.';
 
 describe('<Heading />', () => {
     it('should render with default values', () => {
-        render(<ThemeProvider theme={theme}> <Heading>Texto</Heading> </ThemeProvider>);
+        renderTheme(<Heading light={false}>Texto</Heading>);
         const heading = screen.getByRole('heading', {name: 'Texto'});
 
         expect(heading).toHaveStyle({
-            color: theme.colors.textColorLight,
+            color: theme.colors.textColorLight || theme.colors.textColorDark,
             'font-size': theme.fontSize.big,
             'text-transform': 'none',
         });
     });
 
-    it('should render with color Dark values', () => {
-        render(<ThemeProvider theme={theme}> <Heading light={true}>Texto</Heading> </ThemeProvider>);
+    it('should renderTheme with color Dark values', () => {
+        renderTheme(<Heading light={true}>Texto</Heading>);
         const heading = screen.getByRole('heading', {name: 'Texto'});
 
         expect(heading).toHaveStyle({
@@ -27,8 +26,8 @@ describe('<Heading />', () => {
         });
     });
 
-    it('should render with size Default values', () => {
-        render(<ThemeProvider theme={theme}> <Heading size='default'>Texto</Heading> </ThemeProvider>);
+    it('should renderTheme with size Default values', () => {
+        renderTheme(<Heading size='default'>Texto</Heading>);
         const heading = screen.getByRole('heading', {name: 'Texto'});
 
         expect(heading).toHaveStyle({
@@ -36,8 +35,8 @@ describe('<Heading />', () => {
         });
     });
 
-    it('should render with size Small values', () => {
-        render(<ThemeProvider theme={theme}> <Heading size='small'>Texto</Heading> </ThemeProvider>);
+    it('should renderTheme with size Small values', () => {
+        renderTheme(<Heading size='small'>Texto</Heading>);
         const heading = screen.getByRole('heading', {name: 'Texto'});
 
         expect(heading).toHaveStyle({
@@ -45,8 +44,8 @@ describe('<Heading />', () => {
         });
     });
 
-    it('should render with size Medium values', () => {
-        render(<ThemeProvider theme={theme}> <Heading size='medium'>Texto</Heading> </ThemeProvider>);
+    it('should renderTheme with size Medium values', () => {
+        renderTheme(<Heading size='medium'>Texto</Heading>);
         const heading = screen.getByRole('heading', {name: 'Texto'});
 
         expect(heading).toHaveStyle({
@@ -54,8 +53,8 @@ describe('<Heading />', () => {
         });
     });
 
-    it('should render with uppercase values', () => {
-        render(<ThemeProvider theme={theme}> <Heading upperCase>Texto</Heading> </ThemeProvider>);
+    it('should renderTheme with uppercase values', () => {
+        renderTheme(<Heading upperCase>Texto</Heading>);
         const heading = screen.getByRole('heading', {name: 'Texto'});
 
         expect(heading).toHaveStyle({
@@ -63,8 +62,8 @@ describe('<Heading />', () => {
         });
     });
 
-    it('should render with other Tags values', () => {
-        const { container } = render(<ThemeProvider theme={theme}> <Heading as='h6'>Texto</Heading> </ThemeProvider>);
+    it('should renderTheme with other Tags values', () => {
+        const { container } = renderTheme(<Heading as='h6'>Texto</Heading>);
         //const heading = screen.getByRole('heading', {name: 'Texto'});
         const h6 = container.querySelector('h6')
 

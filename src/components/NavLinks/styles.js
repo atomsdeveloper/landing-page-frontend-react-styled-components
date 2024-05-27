@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const NavLink = styled.nav`
+const Container = styled.nav`
     ${() => css`
         display: flex;
         flex-flow: row wrap;
@@ -11,4 +11,4 @@ const NavLink = styled.nav`
         }
   `}
 `;
-export default NavLink;
+export default Container;

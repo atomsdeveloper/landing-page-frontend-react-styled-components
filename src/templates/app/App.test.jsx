@@ -1,7 +1,8 @@
-import theme from '../../styles/theme';
-import { ThemeProvider } from 'styled-components';
+import { renderTheme }  from '../../styles/render-theme';
+import { Home }  from '.';
 
-import { Home } from '.';
-test('renders learn react link', () => {
-  expect(<ThemeProvider theme={theme}> <Home /> </ThemeProvider>);
-});
+describe('<TextContent />', () => {
+    it('should render component with TextContent', () => {
+        renderTheme(<Home />);
+    });
+})

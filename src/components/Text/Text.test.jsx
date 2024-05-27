@@ -1,18 +1,10 @@
-import { screen } from '@testing-library/dom';
-import { render } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderTheme }  from '../../styles/render-theme';
+import { TextContent }  from '.';
 
-import { ThemeProvider } from 'styled-components';
-import theme from '../../styles/theme';
-
-import { Text }  from '.';
-
-describe('<Text />', () => {
-    it('should render component with Text', () => {
-        render(<ThemeProvider theme={theme}> <Text>Texto</Text> </ThemeProvider>);
-        const heading = screen.getByRole('heading', {name: 'Texto'});
-
-        expect(heading).toHaveStyle({
-            color: 'blue'
-        });
+describe('<TextContent />', () => {
+    it('should render component with TextContent', () => {
+        renderTheme(<TextContent> Texto </TextContent>);
+        expect(screen.getByText('Texto')).toBeInTheDocument();
     });
 })

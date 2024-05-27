@@ -17,11 +17,11 @@ const titleSize = {
 const titleCase = (upperCase) => css`
     text-transform: ${upperCase ? "uppercase" : "none"};
 `;
-const Title = styled.h1`
+const Container = styled.h1`
     ${({theme, light, size, upperCase}) => css`
         color: ${light ? theme.colors.textColorDark : theme.colors.textColorLight};
         ${ titleSize[size](theme) };
         ${ titleCase(upperCase) }
     `}
 `;
-export default Title;
+export default Container;

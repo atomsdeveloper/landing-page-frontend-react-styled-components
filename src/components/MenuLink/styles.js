@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const Link = styled.a`
+const Container = styled.a`
     ${({theme}) => css`
         display: block;
         text-decoration: none;
@@ -26,4 +26,4 @@ const Link = styled.a`
     `}
 
 `;
-export default Link;
+export default Container;
