@@ -1,14 +1,23 @@
 import P from 'prop-types';
 import * as Styled from './styles';
+import { Heading } from '@storybook/blocks';
 
-export const LogoLink = ( {children, light= false} ) => {
+export const LogoLink = ( {text, image='', link} ) => {
     return (
-        <Styled.Container light={light}>
-            {children}
-        </Styled.Container>
+        <Heading size='default' upperCase>
+            <Styled.Container href={link}>
+                {!!image && (
+                    <img src={image} alt={text} />
+                )}
+                {!image && (
+                    {text}
+                )}
+            </Styled.Container>
+        </Heading>
     );
 };
 LogoLink.propTypes = {
-    children: P.string.isRequired,
-    light: P.bool.isRequired
+    text: P.string.isRequired,
+    image: P.string,
+    link: P.string.isRequired
 };
