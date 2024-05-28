@@ -1,21 +1,32 @@
-import { screen } from '@testing-library/dom';
-
+import { screen } from '@testing-library/react';
 import { renderTheme } from '../../styles/render-theme';
+import { MenuLink } from '.';
 
-import {MenuLink} from '.';
 describe('<MenuLink />', () => {
-    it('should render a link', () => {
-        renderTheme(<MenuLink link='https://localhost'> Children </MenuLink>);
-        expect(screen.getByRole('link', {name: 'children'}).toBeInTheDocument());
-    });
+  it('should render a link', () => {
+    renderTheme(<MenuLink link="http://localhost">Children</MenuLink>);
+    expect(screen.getByRole('link', { name: 'Children' })).toHaveAttribute(
+      '_self' || '_blank',
+    );
+  });
 
-    it('should renderTheme a link with target self or blank', () => {
-        renderTheme(<MenuLink target='_self'> Children </MenuLink>);
-        expect(screen.getByRole('target', {name: '_self' || '_black'}).toBeInTheDocument());
-    });
+  it('should render open in a new tab', () => {
+    renderTheme(
+      <MenuLink link="http://localhost" newTab={true}>
+        Children
+      </MenuLink>,
+    );
+    expect(screen.getByRole('link', { name: 'Children' })).toHaveAttribute(
+      '_self' || '_blank'
+    );
+  });
 
-    it('should renderTheme a link with name value', () => {
-        renderTheme(<MenuLink target='_self'> Children </MenuLink>);
-        expect(screen.getByRole('target', {name: '_self' || '_black'}).firstChild.toBeInTheDocument());
-    })
+  it('should render open in a new tab', () => {
+    const { container } = renderTheme(
+      <MenuLink link="http://localhost" newTab={false}>
+        Children
+      </MenuLink>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

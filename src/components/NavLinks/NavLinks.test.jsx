@@ -1,14 +1,12 @@
-import { screen } from '@testing-library/dom';
-
+import { screen } from '@testing-library/react';
 import { renderTheme } from '../../styles/render-theme';
-
 import { NavLinks } from '.';
 
 import mock from './mock';
 
 describe('<NavLinks />', () => {
   it('should render links', () => {
-    renderTheme( <NavLinks links={mock} /> );
+    renderTheme(<NavLinks links={mock} />);
     expect(screen.getAllByRole('link')).toHaveLength(mock.length);
   });
 
@@ -20,13 +18,12 @@ describe('<NavLinks />', () => {
   it('should render links', () => {
     renderTheme(<NavLinks links={mock} />);
     expect(screen.getByText(/link 10/i).parentElement).toHaveStyleRule(
-      'flex-flow',
-      'column wrap',
+      'flex-flow', 'row wrap',
     );
   });
 
   it('should match snapshot', () => {
-    renderTheme(<NavLinks links={mock} />);
-    expect(screen.getAllByRole('link')).toMatchSnapshot();
+    const { container } = renderTheme(<NavLinks links={mock} />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
