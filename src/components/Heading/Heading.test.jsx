@@ -27,7 +27,6 @@ describe('<Heading />', () => {
 
   it('should render correct heading sizes', () => {
         const { rerender } = renderTheme(<Heading size="small">texto</Heading>);
-        const heading = screen.getByRole('heading', { name: 'texto' });
         
         rerender(
           <ThemeProvider theme={theme}>
@@ -58,7 +57,6 @@ describe('<Heading />', () => {
         expect(screen.getByRole('heading', { name: 'texto' })).toHaveStyle({
           'font-size': theme.font,
         });
-    });
   });
 
   it('should render with uppercase letters', () => {
