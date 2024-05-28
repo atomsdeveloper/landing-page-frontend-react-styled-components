@@ -1,6 +1,6 @@
 import P from 'prop-types';
 import * as Styled from './styles';
-import { Heading } from '@storybook/blocks';
+import { Heading } from '../Heading'
 
 export const LogoLink = ( {text, image='', link} ) => {
     return (
@@ -10,7 +10,7 @@ export const LogoLink = ( {text, image='', link} ) => {
                     <img src={image} alt={text} />
                 )}
                 {!image && (
-                    {text}
+                    <span>{text}</span>
                 )}
             </Styled.Container>
         </Heading>
