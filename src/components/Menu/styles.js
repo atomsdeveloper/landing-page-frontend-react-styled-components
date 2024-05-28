@@ -1,60 +1,61 @@
 import styled, { css } from 'styled-components';
 import { Container as SectionContainer } from '../SectionContainer/styles';
-import { Title as Heading } from '../Heading/styles'
+import { Container as Heading } from '../Heading/styles'
 
-const setMenuVisible = (theme) => css`
-    visibility: visible;
-    opacity: 1;
+const menuVisible = () => css`
+  visibility: visible;
+  opacity: 1;
 `;
+
 export const Container = styled.div`
-    ${({theme, menuVisible}) => css`
-        transition: all 300ms ease-in-out;
-        color: ${theme.color.textColorDark};
-        position: fixed;
-        z-index: 5;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-bottom: #dddddd;
-    `};
+  ${({ theme, visible }) => css`
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-bottom: ${theme.colors.textColorDark};
+    background: ${theme.colors.bgColorLight};
+    transition: all 300ms ease-in-out;
 
     > ${SectionContainer} {
-        padding-top: 0;
-        padding-bottom: 0;
-    };
+      padding-top: 0;
+      padding-bottom: 0;
+    }
 
     & ${Heading} {
-        margin-left: 0;
-        margin-bottom: 0;
+      margin-top: 0;
+      margin-bottom: 0;
     }
 
-    @media (max-width: 768px) {
+    @media ${theme.media.mobile} {
+      height: 100vh;
+      visibility: hidden;
+      opacity: 0;
+      ${visible && menuVisible(theme)}
+
+      > ${SectionContainer} {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
         height: 100vh;
-        visibility: hidden;
-        opacity: 0;
-        ${menuVisible && setMenuVisible(theme)}
+        align-items: center;
+        overflow-y: auto;
+      }
 
-        > ${SectionContainer} {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr;
-            height: 100vh;
-            align-items: center;
-            overflow-y: auto;
-        };
-
-        & ${Heading} {
-            display: flex;
-            justify-content: center;
-            padding-bottom: 3.2rem;
-        }
+      & ${Heading} {
+        padding-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+      }
     }
+  `}
 `;
 
 export const MenuContainer = styled.div`
     ${({theme}) => css`
-        color: ${theme.color.textColorDark};
+        color: ${theme.colors.textColorDark};
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -68,7 +69,10 @@ export const MenuContainer = styled.div`
 `;
 
 export const Button = styled.div`
-    ${({theme, menuVisible}) => css`
+    ${({theme, visible}) => css`
+       display: flex;
+       align-items: center;
+       justify-content: center;
        z-index: 6;
        position: fixed;
        top: 2rem;
@@ -76,9 +80,9 @@ export const Button = styled.div`
        width: 4rem;
        height: 4rem;
        background: ${theme.colors.bgColorDark};
-       color: ${theme.colors.textColorlight};
+       color: ${theme.colors.textColorLight};
        border: none;
-       pointer-events: ${menuVisible ? 'none' : 'all'};
+       pointer-events: ${visible ? 'none' : 'all'};
     `}; 
 
     @media (max-width: 768px) {

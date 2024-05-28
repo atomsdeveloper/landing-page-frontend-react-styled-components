@@ -19,5 +19,9 @@ export const theme = {
     }, 
     spacings: {
 
+    },
+    media: {
+        mobile: '(max-width: 768px)',
     }
+    
 };
